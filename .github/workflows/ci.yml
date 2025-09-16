@@ -1,6 +1,6 @@
 name: CI Workflow
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -12,3 +12,6 @@ jobs:
 
     - name: Hola CI
       run: echo "Hola repositorio"
+
+    - name: Contenido repositorio
+      run: ls -la

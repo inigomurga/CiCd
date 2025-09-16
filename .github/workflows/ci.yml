@@ -17,7 +17,7 @@ jobs:
       run: ls -la
 
     - name: Construir imagen
-      run: docker build -t mi-app:ci
+      run: docker build -t mi-app:ci .
 
     - name: Ejecutar contenedor
       run: docker run --rm mi-app:ci

@@ -1,0 +1,14 @@
+name: CI Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+
+    - name: Hola CI
+      run: echo "Hola repositorio"

@@ -33,3 +33,8 @@ jobs:
         context: .
         push: true
         tags: ghcr.io/${{ github.repository_owner }}/test-image:${{ steps.sha.outputs.COMMIT_SHA }}
+
+    - name: Verificar la imagen publicada
+      run: |
+        docker pull ghcr.io/${{ github.repository_owner }}/test-image:${{ steps.sha.outputs.COMMIT_SHA }}
+        docker run --rm ghcr.io/${{ github.repository_owner }}/test-image:${{ steps.sha.outputs.COMMIT_SHA }}

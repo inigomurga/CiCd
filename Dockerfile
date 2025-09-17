@@ -1,7 +1,5 @@
-From node:18-alpine
+FROM alpine:3.18
 
-WORKDIR /app
+RUN echo "hola desde GHCR" > /mensaje.txt
 
-COPY . .
-
-CMD ["node", "-e", "console.log('Hola desde Docker')"]
+CMD ["cat", "/mensaje.txt"]
